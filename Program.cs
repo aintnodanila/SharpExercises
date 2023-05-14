@@ -10,7 +10,7 @@ public class Program
         //Console.WriteLine(i.RemoveVowels("You're so dumb."));
 
         
-        // Roman numbers conventer  
+        // Roman numbers converter  
         //Converter c = new Converter();
         //Console.WriteLine(c.ConvertToArabic("MDCLXVI"));
         //Console.WriteLine(c.ConvertToArabic("MCMXC"));
