@@ -1,20 +1,26 @@
 namespace SharpExercises;
-
 public class Converter
 {
-    private static Dictionary<char, int> _romanNumerals = new Dictionary<char, int>()
+    private string[] Romans = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+    private int[] Arabics = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+
+    public int ConvertToArabic(string romanNumeral)
     {
-        {'I', 1},
-        {'V', 5},
-        {'X', 10},
-        {'L', 50},
-        {'C', 100},
-        {'D', 500},
-        {'M', 1000}
-    };
-    
-    /*public static int ConvertToArabic(string str)
-    {
-        
-    }*/
+        int arabicNumber = 0;
+        int index = 0;
+
+        foreach (string roman in Romans)
+        {
+            while (romanNumeral.StartsWith(roman))
+            {
+                arabicNumber += Arabics[index];
+                romanNumeral = romanNumeral.Substring(roman.Length);
+            }
+
+            index++;
+        }
+
+        return arabicNumber;
+    }
 }
+
